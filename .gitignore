@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-
+src/tests
 # testing
 /coverage
 unit.xml
@@ -20,3 +20,8 @@ unit.xml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/App.test.js
+src/actions/index.test.js
+src/helpers/fake-api.js
+src/setupTests.js
