@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { PrivateRoute } from './PrivateRoute.js';
 import { history } from './helpers';
 import { alertActions } from './actions';
-import { HomePage } from './components/HomePage';
-import { LoginPage } from './components/LoginPage';
-import { RegisterPage } from './components/RegisterPage';
+import HomePage  from './components/HomePage';
+import LoginPage  from './components/LoginPage';
+import RegisterPage  from './components/RegisterPage';
 
-export class App extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
 
@@ -23,9 +23,9 @@ export class App extends React.Component {
               <div className="container">
                   <Router history={history}>
                       <Switch>
+                        <PrivateRoute exact path="/" component={HomePage} />
                         <Route exact path="/login" component={LoginPage} />
                         <Route exact path="/register" component={RegisterPage} />
-                        <PrivateRoute exact path="/" component={HomePage} />
                       </Switch>
                   </Router>
               </div>
@@ -33,16 +33,15 @@ export class App extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
+
+function mapState(state) {
     const { alert } = state;
-    return {
-        alert
-    };
+    return { alert };
 }
 
-/**
- * <div className="col-sm-8 col-sm-offset-2">
-                              <LoginPage />
-                  </div>
+const actionCreators = {
+    clearAlerts: alertActions.clear
+};
 
- */
+const connectedApp = connect(mapState, actionCreators)(App);
+export default connectedApp;
