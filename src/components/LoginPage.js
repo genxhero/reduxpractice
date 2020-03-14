@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../actions';
 
-export class LoginPage extends Component {
+ class LoginPage extends Component {
     constructor(props) {
         super(props);
-
-        // reset login status
-
         this.state = {
             username: '',
             password: '',
@@ -28,7 +25,7 @@ export class LoginPage extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
+        console.log(this.props)
         this.props.login(this.state.username, this.state.password)
     }
 
@@ -62,14 +59,16 @@ export class LoginPage extends Component {
     }
 }
 
-function mapStateToProps(state) {
-
+function mapState(state) {
+    const { loggingIn } = state.authentication;
+    return { loggingIn };
 }
 
 
-const action = {
-    login: userActions.login
-}
+const actionCreators = {
+    login: userActions.login,
+    logout: userActions.logout
+};
 
-const TestLoginPage = connect(mapStateToProps, action)(LoginPage)
-export default TestLoginPage;
+const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
+export default connectedLoginPage;
