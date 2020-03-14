@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { userActions} from '../actions/user.actions';
 
-export class HomePage extends Component {
+ class HomePage extends Component {
 
     render() {
         return (
@@ -17,3 +18,18 @@ export class HomePage extends Component {
         );
     }
 }
+
+function mapState(state) {
+    const { users, authentication } = state;
+    const { user } = authentication;
+    return { user, users };
+}
+
+const actionCreators = {
+    getUsers: userActions.getAll,
+    deleteUser: userActions.delete,
+    logout: userActions.logout
+}
+
+const connectedHomePage = connect(mapState, actionCreators)(HomePage);
+export default connectedHomePage;
