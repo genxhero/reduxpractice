@@ -19,7 +19,7 @@ const Fidget = () => {
         style={{ background: COLORS[color] }}
         onClick={changeColor}
       >
-        <span>Click Me</span>
+        <span className="button-label">Click Me</span>
       </div>
     );
 
