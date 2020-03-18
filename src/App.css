@@ -1,10 +1,12 @@
 .clicky {
     padding: 1rem;
     user-select: none;
+    width: fit-content;
 }
 
 .button-label {
     color: white;
+    text-shadow: 1px 1px 1px black;
     font-family: sans-serif;
     font-size: large;
     font-weight: 600;
