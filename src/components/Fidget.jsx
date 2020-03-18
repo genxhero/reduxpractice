@@ -11,10 +11,10 @@ const Fidget = () => {
             setColor(0)
         }
     }
-    
+
     const [color, setColor] = useState(0);
     return (
-        <div style={{"background": COLORS[color]}} onClick={changeColor}>
+        <div className="clicky" style={{"background": COLORS[color]}} onClick={changeColor}>
             Click Me
         </div>
     )
