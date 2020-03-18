@@ -8,6 +8,7 @@ import HomePage  from './components/HomePage';
 import LoginPage  from './components/LoginPage';
 import RegisterPage  from './components/RegisterPage';
 import Fidget from './components/Fidget';
+import './App.css';
 
 class App extends React.Component {
     constructor(props) {
