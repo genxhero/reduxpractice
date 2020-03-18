@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const COLORS = ["red", "blue", "green", "cyan", "magenta", "yellow", "purple"]
+const COLORS = ["red", "blue", "green", "cyan", "magenta", "yellow", "purple"];
 
 const Fidget = () => {
 
@@ -11,6 +11,7 @@ const Fidget = () => {
             setColor(0)
         }
     }
+    
     const [color, setColor] = useState(0);
     return (
         <div style={{"background": COLORS[color]}} onClick={changeColor}>
