@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 const COLORS = ["red", "blue", "green", "cyan", "magenta", "yellow", "purple"]
 
-const Fidget = (props) => {
+const Fidget = () => {
 
     const changeColor = ()=> {
         if (color < COLORS.length) {
