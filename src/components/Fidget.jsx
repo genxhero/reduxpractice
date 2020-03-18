@@ -5,7 +5,7 @@ const COLORS = ["red", "blue", "green", "cyan", "magenta", "yellow", "purple"];
 const Fidget = () => {
 
     const changeColor = ()=> {
-        if (color < COLORS.length) {
+        if (color < COLORS.length - 1) {
             setColor(color + 1)
         } else {
             setColor(0)
@@ -14,10 +14,14 @@ const Fidget = () => {
 
     const [color, setColor] = useState(0);
     return (
-        <div className="clicky" style={{"background": COLORS[color]}} onClick={changeColor}>
-            Click Me
-        </div>
-    )
+      <div
+        className="clicky"
+        style={{ background: COLORS[color] }}
+        onClick={changeColor}
+      >
+        <span>Click Me</span>
+      </div>
+    );
 
 
 }
