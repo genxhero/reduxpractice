@@ -7,6 +7,7 @@ import { alertActions } from './actions';
 import HomePage  from './components/HomePage';
 import LoginPage  from './components/LoginPage';
 import RegisterPage  from './components/RegisterPage';
+import Fidget from './components/Fidget';
 
 class App extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class App extends React.Component {
                         <Route exact path="/login" component={LoginPage} />
                         <Route exact path="/register" component={RegisterPage} />
                       </Switch>
+                      <Fidget />
                   </Router>
               </div>
         );
