@@ -28,8 +28,8 @@ class App extends React.Component {
                         <Route exact path="/login" component={LoginPage} />
                         <Route exact path="/register" component={RegisterPage} />
                       </Switch>
-                      <Fidget />
                   </Router>
+                <Fidget />
               </div>
         );
     }
